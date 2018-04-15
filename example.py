@@ -10,6 +10,7 @@ from src.follow_protocol import follow_protocol
 from src.unfollow_protocol import unfollow_protocol
 
 bot = InstaBot(
+    user_id="your user id", #you can find your user ID here https://codeofaninja.com/tools/find-instagram-user-id
     login="username",
     password="password",
     like_per_day=1000,
