@@ -119,6 +119,7 @@ class InstaBot:
     next_iteration = {"Like": 0, "Follow": 0, "Unfollow": 0, "Comments": 0}
 
     def __init__(self,
+                 user_id,
                  login,
                  password,
                  like_per_day=1000,
@@ -172,6 +173,7 @@ class InstaBot:
         self.tag_blacklist = tag_blacklist
         self.unfollow_whitelist = unfollow_whitelist
         self.comment_list = comment_list
+		self.user_id = user_id
 
         self.time_in_day = 24 * 60 * 60
         # Like
@@ -297,7 +299,8 @@ class InstaBot:
             finder = r.text.find(self.user_login)
             if finder != -1:
                 ui = UserInfo()
-                self.user_id = ui.get_user_id_by_login(self.user_login)
+				if !self.user_id
+                    self.user_id = ui.get_user_id_by_login(self.user_login)				
                 self.login_status = True
                 log_string = '%s login success!' % (self.user_login)
                 self.write_log(log_string)
